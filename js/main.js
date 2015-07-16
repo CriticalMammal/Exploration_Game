@@ -18,6 +18,12 @@ function main() {
 	stage.addChild(world);
 	stage.addChild(menu);
 
+	// load images
+	var loader = PIXI.loader;
+	loader
+		.add("img/tilesheet.png")
+		.load(setup(world));
+
 	// keyboard object for keyboard events
 	var keyboard = new Keyboard();
 
@@ -53,5 +59,32 @@ function main() {
 	} // END update
 
 } // END main
+
+function setup(world) {
+
+  //Create the `tileset` sprite from the texture
+  // var texture = PIXI.utils.TextureCache["img/tilesheet.png"];
+  var texture = PIXI.Texture.fromImage("img/tilesheet.png");
+
+  //Create a rectangle object that defines the position and
+  //size of the sub-image you want to extract from the texture
+  var rectangle = new PIXI.Rectangle(64, 64, 32, 32); // why are the coordinates not working right? won't go past 64??????
+
+  //Tell the texture to use that rectangular section
+  texture.frame = rectangle;
+
+  //Create the sprite from the texture
+  var rocket = new PIXI.Sprite(texture);
+
+  //Position the rocket sprite on the canvas
+  rocket.x = 0;
+  rocket.y = 0;
+
+  //Add the rocket to the stage
+  world.addChild(rocket);
+
+  //Render the stage   
+  // renderer.render(stage);
+}
 
 var startMain = new main();

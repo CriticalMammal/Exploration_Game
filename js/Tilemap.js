@@ -1,5 +1,5 @@
 function Tilemap(parentContainer, tileIn) {
-	this.map = new PIXI.Container();
+	this.map = new PIXI.Container(); // maybe make this a ParticleContainer?
 	parentContainer.addChild(this.map);
 
 	var rows = 100;
