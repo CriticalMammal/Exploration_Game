@@ -1,7 +1,7 @@
 function Player(parentContainer, renderer, keyInput) {
 	
 	// private vars
-	var texture = PIXI.Texture.fromImage("bunny.png");
+	var texture = PIXI.Texture.fromImage("img/bunny.png");
 	var keyboard = keyInput;
 	var rotationLerp = 0.0;
 	var speed = 5;

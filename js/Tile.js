@@ -1,6 +1,6 @@
 function Tile(parentContainer, xPos, yPos, width, height) {
 	// test geometry to represent the "world" background
-	var texture = PIXI.Texture.fromImage("bunny.png");
+	var texture = PIXI.Texture.fromImage("img/bunny.png");
 	this.sprite = new PIXI.Sprite(texture);
 
 	this.sprite.position.x = xPos;
