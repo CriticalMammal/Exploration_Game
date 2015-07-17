@@ -1,21 +1,23 @@
 function Player(parentContainer, renderer, keyInput) {
 	
 	// private vars
-	var texture = PIXI.Texture.fromImage("img/bunny.png");
 	var keyboard = keyInput;
 	var rotationLerp = 0.0;
 	var speed = 5;
 	
-	// public vars
-	this.sprite = new PIXI.Sprite(texture);
-	
-	// Init values
-	this.sprite.anchor.x = 0.5;
-	this.sprite.anchor.y = 0.5;
-	this.sprite.position.x = renderer.width/2;
-	this.sprite.position.y = renderer.height/2;
 
-	parentContainer.addChild(this.sprite);
+	Player.prototype.init = function() {
+		this.sprite = new PIXI.Sprite.fromImage("img/bunny.png");
+
+		// Init values
+		this.sprite.anchor.x = 0.5;
+		this.sprite.anchor.y = 0.5;
+		this.sprite.position.x = renderer.width/2;
+		this.sprite.position.y = renderer.height/2;
+
+		parentContainer.addChild(this.sprite);
+	}
+
 
 	Player.prototype.update = function() {
 		if (keyboard.up.isDown) {

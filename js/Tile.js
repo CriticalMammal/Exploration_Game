@@ -1,10 +1,12 @@
-function Tile(parentContainer, xPos, yPos, width, height) {
+function Tile(parentContainer, xPos, yPos, width, height, textureIn) {
 	// test geometry to represent the "world" background
-	var texture = PIXI.Texture.fromImage("img/bunny.png");
+	// var texture = PIXI.Texture.fromImage("img/bunny.png");
+	var texture = textureIn;
 	this.sprite = new PIXI.Sprite(texture);
 
 	this.sprite.position.x = xPos;
 	this.sprite.position.y = yPos;
+	this.z = 2;
 	this.sprite.width = width;
 	this.sprite.height = height;
 
@@ -22,5 +24,9 @@ function Tile(parentContainer, xPos, yPos, width, height) {
 	    }
 
 	    return parseInt(color, 16);
+	}
+
+	function getRandomInt(min, max) {
+	    return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 }
