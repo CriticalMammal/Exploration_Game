@@ -7,7 +7,8 @@ function Player(parentContainer, renderer, keyInput) {
 	
 
 	Player.prototype.init = function() {
-		this.sprite = new PIXI.Sprite.fromImage("img/bunny.png");
+		// this.sprite = new PIXI.Sprite.fromImage("img/bunny.png");
+		this.sprite = new PIXI.Sprite();
 
 		// Init values
 		this.sprite.anchor.x = 0.5;
